@@ -26,7 +26,7 @@ export default {
   plugins: [
     '~/plugins/pluginRegister.js',
     '~/plugins/phosphorVuePlugin.ts',
-    '~/plugins/vee-validate-plugin.ts'
+    '~/plugins/vee-validate-plugin.js'
 
   ],
 

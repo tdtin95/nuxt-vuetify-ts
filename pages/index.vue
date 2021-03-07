@@ -51,9 +51,6 @@ export default Vue.extend({
       f().then((result: Object) => console.log(result))
     },
     onSelectLanguage() : void {
-      //const langs = this.$i18n.locales.filter((i : any) => i.code !== this.$i18n.locale)
-     // console.log(langs)
-      console.log(this.$i18n)
       this.$i18n.setLocale(this.selectedLang)
     }
   }

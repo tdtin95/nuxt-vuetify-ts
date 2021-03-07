@@ -91,7 +91,7 @@ export default Vue.extend({
         console.log(result)
         if (result.valid) {
           this.dateValue = new DateTimeConverter().fromDateFormat(DATE_DEFAULT_FORMAT).toDateFormat(CALENDAR_FORMAT).convert(date)
-          this.toInputDateFormat()
+          this.inputValue = this.toInputDateFormat()
         }
       })
     },
