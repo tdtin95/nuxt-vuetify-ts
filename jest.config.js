@@ -4,6 +4,7 @@ module.exports = {
     '^~/(.*)$': '<rootDir>/$1',
     '^vue$': 'vue/dist/vue.common.js'
   },
+  preset: '@nuxt/test-utils',
   moduleFileExtensions: [
     'ts',
     'js',

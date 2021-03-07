@@ -20,12 +20,15 @@
         "./*"
       ],
       "@/*": [
-        "./*"
+        "./*",
+        "./node_modules/phosphor-vue/src/*"
       ]
     },
     "types": [
       "@nuxt/types",
-      "@types/node"
+      "@types/node",
+      "@types/jest",
+      "@nuxtjs/moment"
     ]
   },
   "exclude": [

@@ -24,6 +24,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/pluginRegister.js',
+    '~/plugins/phosphorVuePlugin.ts',
+    '~/plugins/vee-validate-plugin.ts'
+
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -38,6 +42,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/moment',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -65,5 +70,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+    transpile: ["vee-validate/dist/rules"],
+  },
+
+
 }
