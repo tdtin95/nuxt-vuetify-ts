@@ -2,21 +2,24 @@
   <div class="text-center">
     <ValidationObserver v-slot="{errors, validate, handleSubmit}">
       <form @submit.prevent="handleSubmit(validateComponent(errors, validate))">
-      <Dialog>
-        <template #default="slotProps">
-          <v-btn
-            color="red lighten-2"
-            dark
-            v-bind="slotProps.attrs"
-            v-on="slotProps.on">
-            Click Me
-          </v-btn>
-        </template>
-      </Dialog>
-      <date-picker></date-picker>
-      <v-btn type="submit">
-         VALIDATE
-      </v-btn>
+        <Dialog>
+          <template #default="slotProps">
+            <v-btn
+              color="red lighten-2"
+              dark
+              v-bind="slotProps.attrs"
+              v-on="slotProps.on">
+              Click Me
+            </v-btn>
+          </template>
+        </Dialog>
+        <date-picker></date-picker>
+        <v-combobox :items="languages" v-model="selectedLang" @change="onSelectLanguage">
+
+        </v-combobox>
+        <v-btn type="submit">
+          {{ $t('button.validate') }}
+        </v-btn>
       </form>
     </ValidationObserver>
 
@@ -38,12 +41,20 @@ export default Vue.extend({
   data() {
     return {
       dialog: false,
+      languages : ['en', 'fr'],
+      selectedLang: ''
     }
   },
   methods: {
-    validateComponent(o : Object , f:Function) : void {
+    validateComponent(o: Object, f: Function): void {
       console.log(o)
-      f().then((result : Object) => console.log(result))
+      f().then((result: Object) => console.log(result))
+    },
+    onSelectLanguage() : void {
+      //const langs = this.$i18n.locales.filter((i : any) => i.code !== this.$i18n.locale)
+     // console.log(langs)
+      console.log(this.$i18n)
+      this.$i18n.setLocale(this.selectedLang)
     }
   }
 })
