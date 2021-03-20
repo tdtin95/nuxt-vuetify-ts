@@ -1,5 +1,8 @@
 {
   "button": {
     "validate": "Validate"
+  },
+  "validation": {
+    "invalidDate" : "Invalid date : "
   }
 }

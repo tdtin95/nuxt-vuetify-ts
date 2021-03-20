@@ -51,6 +51,7 @@ export default Vue.extend({
       f().then((result: Object) => console.log(result))
     },
     onSelectLanguage() : void {
+      console.log(this.$t('button.validate'))
       this.$i18n.setLocale(this.selectedLang)
     }
   }

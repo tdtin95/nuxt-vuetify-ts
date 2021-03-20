@@ -2,6 +2,6 @@
   "extends": [
     "@nuxtjs",
     "@nuxtjs/eslint-config-typescript",
-    "prettier"
+     "prettier"
   ]
 }
